@@ -1,75 +1,26 @@
-# Code Challenge
-`
-Simple CRUD functionality using PHP Symfony 4.2 version by John <john@pluto.solutions>
-`
+# PHP Symfony 4.2 Console Application Development
+`Develop PHP Symfony Console Application using PHP Symfony 4.2 framework.`
 
-## How to install
-* git clone https://github.com/plutosolutions/code-challenge
-* cd code-challenge
+#### Contact Info
+* Author : Pluto Solutions <hi@pluto.solutions>
+* Web : http://pluto.solutions
+
+#### About
+`Pluto Solutions provide services of full stack development to international clients. Our works relevant web applications development, front-end, back-end, automation test, and system integration. We are main in PHP, Symfony 3.4, Symfony 4, Symfony Micro-services, Node JS, JavaScrtipt, Java, C#, Angular, Vue, React, integration test, regression test, acceptance test, black box testing, docker, Linux, Cloud, AWS, GCP, Azure, etc.`
+ 
+`We help international clients to develop, upgrade, and maintain web applications, new feature development, integration, QA, and automation test.`
+
+#### Setup
+* git clone https://github.com/plutosolutions/PHP-Symfony-4-Console-Application
+* cd PHP-Symfony-4-Console-Application
 * composer install
 
-## Change MySQL database configuration at file .env
-* DATABASE_URL=mysql://username:password@host:port/codechallenge
-* For example : DATABASE_URL=mysql://root:1234@127.0.0.1:3306/codechallenge
+#### Database configuration at file .env
+* DATABASE_URL=mysql://{username}:{password}@host:port/{database name}
 
-## Create database codechallenge using follow command
-* php bin/console d:d:c
+#### Command List
+##### Hello Command
+* php bin/console hello your-name
 
-## Start server
-* php bin/console server:run 0.0.0.0:8000
-* browse http://localhost:8000/ to ensure the Symfony web work property
-
-See example of result at file *tests/Symfony 4 screen.png*
-
-## Test CRUD functions
-* POST http://localhost:8000/api/users 
-Example of POST data
-`
-{
-   "username":"user_x",
-   "userpassword": "password1_x"
-}
-`
-
-* GET http://localhost:8000/api/users then you will get response as follow sample
-Then you will receive response JSON data as follow
-`
-{"users": [
-      {
-      "id": 4,
-      "username": "user1",
-      "userpassword": "password1"
-   },
-      {
-      "id": 5,
-      "username": "user_x",
-      "userpassword": "password1_x"
-   }
-]}
-
-* PUT http://localhost:8000/api/users/{id} then you will get response as follow sample
-`
-{"users": [
-      {
-      "id": 4,
-      "username": "user1",
-      "userpassword": "password1"
-   },
-      {
-      "id": 5,
-      "username": "user_x",
-      "userpassword": "password1_x"
-   }
-]}
-`
-
-* DELETE http://localhost:8000/api/users/{id} then you will get response as follow sample
-`
-"Deleted user id : 3 completely !"
-
-## SOAPUI Testing
-You can use SOAPUI to test CRUD function.
-* SOAPUI test file at folder tests/Code-Challenge-soapui-project.xml
-* Example of SOAPUI Tested result at folder tests/SOAPUI Test results.png
-* SOAPUI download link https://www.soapui.org/
-
+##### Cache Clear Command
+* php bin/console clear-cache

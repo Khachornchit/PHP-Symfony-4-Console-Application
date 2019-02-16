@@ -1,20 +1,21 @@
 <?php
 /**
- * Class/file ClearcacheCommand.php
+ * Class/file ClearCacheCommand.php
  *
  * @author John Pluto Solutions <john@pluto.solutions>
- * Date: 2/14/2019
- * Time: 10:07 PM
+ * Date: 2/16/2019
+ * Time: 9:32 PM
  */
 
-namespace Console\App\Commands;
+namespace App\Commands;
+
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class ClearcacheCommand extends Command
+class ClearCacheCommand extends Command
 {
     protected function configure()
     {
@@ -33,24 +34,16 @@ class ClearcacheCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('Cache is about to cleared...');
-
-        if ($input->getOption('groups'))
-        {
+        if ($input->getOption('groups')) {
             $groups = explode(",", $input->getOption('groups'));
-
-            if (is_array($groups) && count($groups))
-            {
-                foreach ($groups as $group)
-                {
+            if (is_array($groups) && count($groups)) {
+                foreach ($groups as $group) {
                     $output->writeln(sprintf('%s cache is cleared', $group));
                 }
             }
-        }
-        else
-        {
+        } else {
             $output->writeln('All caches are cleared.');
         }
-
         $output->writeln('Complete.');
     }
 }

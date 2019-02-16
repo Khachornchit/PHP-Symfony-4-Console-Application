@@ -1,14 +1,13 @@
 <?php
-
 /**
- * Class/file HelloworldCommand.php
+ * Class/file HelloCommand.php
  *
  * @author John Pluto Solutions <john@pluto.solutions>
- * Date: 2/14/2019
- * Time: 9:56 PM
+ * Date: 2/16/2019
+ * Time: 9:29 PM
  */
 
-namespace Console\App\Commands;
+namespace App\Commands;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -24,7 +23,6 @@ class HelloCommand extends Command
             ->setHelp('Test Hello Command')
             ->addArgument('username', InputArgument::REQUIRED, 'Pass the username.');
     }
-
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln(sprintf('Hello !, %s', $input->getArgument('username')));
